@@ -1,2 +1,4 @@
 data_process/*.json
 !data_process/full_spanish_dataset.json
+
+data_es/*.npy

@@ -1,0 +1,39 @@
+Agustín, i had some time to look this in depth...
+I will say that the usual way to handle the training time is a bit different. It doesn't mean that you can not just use "steps" as you are doing, but it will make it more difficult to talk about "length of training".
+Usually the units used are epochs (a whole run through the training dataset), with the batch size modifying how many steps it requires to finish one. Larger batch sizes (as large as your memory can handle) are recommended for "smoother" trainings.
+
+The recommendations so far would be:
+1 - add the extra tokens (<PAD>, <UNK>, <EOS> with ID 0, 1 and 2 on the dict for the embeddings) to the dictionary and pre-process the tweets to use them before the word2vec. You could replace some random words in the tweets with that, so you would have a "natural" embedding for unknown words, or set every word that appears less than n times (¿5?) as "unknown"
+2 - Use dropout as a placeholder, and use it for training, but prob=1 on validation
+3 - when the problem is convergence, don't go further than 2 layers until you hit a ceiling that tells you that you need them. Most applications don't. You could start with 1 and see if you are lacking power by the end of the training.
+4 - It may be possible that the network is lacking power in the number of units in each cell. Try 200.
+5 - when in doubt, half the learning rate
+6 - try a batch size of 256 or 512
+7 - try between 10 and 20 epochs to see how it is going 
+per the code, 10.000 steps with a batch size of 128 will make you train with 1.280.000 samples. If you have 200.000 tweets this represents ~ 6 epochs. That is way too little for that size of a dataset.
+8 - for the LSTM cell:
+ Try "BasicLSTMCell" instead of the regular one
+ cell = tf.contrib.rnn.LSTMCell(hidden_size)-> tf.contrib.rnn.BasicLSTMCell(hidden_size)
+
+Define an "initial state" for the "multi_lstm_cell"
+initial_state = multi_lstm_cells..zero_state(batch_size, tf.float32
+Don't eschew the outputs from the dynamic rnn, since that is used to generate predictions instead of the "final state"
+_, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32) -> outputs, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, initial_state=initial_state)
+when you run the graph, run [optimizer, loss, accuracy, final_state]
+
+In any case, ifthis is in a repo and you want to share it, i could help further!
+
+Hope this helps
+
+
+Check List:
+
+1-Done
+2-Done
+3-Done
+4-Done
+5-Done
+6-Done
+7-Done
+8-Done
+9-Don't know what you mean. (Don't know how to set up the init state)
