@@ -78,7 +78,7 @@ jovyan@2261d9443deb:~$ tensorboard --logdir log/folder
 
 ## Author
 
-* **Santiago IM** - *Initial work* -
+* **Santiago IM** - *Initial work* - si.musielack@gmail.com
 
 ## Contributions
 
