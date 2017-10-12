@@ -73,7 +73,7 @@ def main(argv):
 			if word in model.wv.vocab:
 				tweets_tensor[i][f] = model.wv[word]
 			else:
-				#if it is a mention vectorize a name
+				#if it is a mention vectorize a name, for example @michael123 -> would be Carlos
 				if word[0] == '@':
 					tweets_tensor[i][f] = model.wv[name()]
 				#if not append the unknown token

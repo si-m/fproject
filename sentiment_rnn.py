@@ -19,17 +19,16 @@ learning_rate = 0.001
 
 TRAIN_DIR="/checkpoints"
 
-# this just makes sure that all our following operations will be placed in the right graph.
 tf.reset_default_graph()
 
-# create a session variable that we can run later.
+# Create a session 
 session = tf.Session()
 
-# make placeholders for data we'll feed in
+# Inputs placeholders
 tweets = tf.placeholder(tf.float32, [None, tweet_size, vec_size], "tweets")
 labels = tf.placeholder(tf.float32, [None, number_of_classes], "labels")
 
-# placeholder for dropout
+# Placeholder for dropout
 keep_prob = tf.placeholder(tf.float32) 
 
 # make the lstm cells, and wrap them in MultiRNNCell for multiple layers
@@ -39,11 +38,11 @@ def lstm_cell():
 
 multi_lstm_cells = tf.contrib.rnn.MultiRNNCell([lstm_cell() for _ in range(number_of_layers)], state_is_tuple=True)
 
-#Creates a recurrent neural network
-output, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32)
+# Creates a recurrent neural network
+outputs, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32)
 
 with tf.name_scope("final_layer"):
-  #weight and bias to shape the final layer
+  # weight and bias to shape the final layer
   W = tf.get_variable("weight_matrix", [hidden_size, number_of_classes], tf.float32, tf.random_normal_initializer(stddev=1.0 / math.sqrt(hidden_size)))
   b = tf.get_variable("bias", [number_of_classes], initializer=tf.constant_initializer(1.0))
 
@@ -100,7 +99,7 @@ for epoch in range(num_epochs):
     data = {tweets: batch_tweets, labels: batch_labels, keep_prob: 0.75}
 
     #run operations in graph
-    _, loss_train, accuracy_train, _final_state, _output = session.run([optimizer, loss, accuracy, final_state, output], feed_dict=data)
+    _, loss_train, accuracy_train = session.run([optimizer, loss, accuracy], feed_dict=data)
 
     if (step % 50 == 0):
       test_loss = []

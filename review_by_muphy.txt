@@ -1,4 +1,3 @@
-Agustín, i had some time to look this in depth...
 I will say that the usual way to handle the training time is a bit different. It doesn't mean that you can not just use "steps" as you are doing, but it will make it more difficult to talk about "length of training".
 Usually the units used are epochs (a whole run through the training dataset), with the batch size modifying how many steps it requires to finish one. Larger batch sizes (as large as your memory can handle) are recommended for "smoother" trainings.
 
