@@ -72,7 +72,16 @@ def main(argv):
 			#if is not in the vocabulary
 			if word in model.wv.vocab:
 				tweets_tensor[i][f] = model.wv[word]
-
+			else:
+				#if it is a mention vectorize a name
+				if word[0] == '@':
+					tweets_tensor[i][f] = model.wv[name()]
+				#if not append the unknown token
+				else:
+					tweets_tensor[i][f] = model.wv['unk']
+		#End of sentence token
+		if(f<MAX_NB_WORDS):
+			tweets_tensor[i][f] = model.wv['eos']
 
 	labels_array = np.array(list(map(lambda label: label_to_value(label), labels)), dtype=np.int32)
 
