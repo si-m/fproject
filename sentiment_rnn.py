@@ -13,7 +13,7 @@ tweet_size = 20
 hidden_size = 200
 vec_size = 300
 batch_size = 512
-number_of_layers= 1
+number_of_layers= 2
 number_of_classes= 3
 learning_rate = 0.001
 
@@ -89,6 +89,7 @@ test_tweets = test_tweets[:9000]
 test_labels = test_labels[:9000]
 
 steps = int(len(train_tweets)/batch_size)
+summary_step = 0
 for epoch in range(num_epochs):
   for step in range(steps):
 
@@ -96,7 +97,7 @@ for epoch in range(num_epochs):
     batch_tweets = train_tweets[offset : (offset + batch_size)]
     batch_labels = train_labels[offset : (offset + batch_size)]
 
-    data = {tweets: batch_tweets, labels: batch_labels, keep_prob: 0.75}
+    data = {tweets: batch_tweets, labels: batch_labels, keep_prob: 1.0}
 
     #run operations in graph
     _, loss_train, accuracy_train = session.run([optimizer, loss, accuracy], feed_dict=data)
@@ -109,9 +110,9 @@ for epoch in range(num_epochs):
       print("Train accuracy:%.3f%%" % (accuracy_train*100))
 
       summary = session.run(merged_summary, feed_dict=data)
-      print("Summary steps:",(step+(epoch*steps)))
-      writer.add_summary(summary,(step+(epoch*steps)))
-
+      print("Summary steps:",(summary_step)
+      writer.add_summary(summary,summary_step)
+      summary_step += 50
       for batch_num in range(int(len(test_tweets)/batch_size)):
         test_offset = (batch_num * batch_size) % (len(test_tweets) - batch_size)
         test_batch_tweets = test_tweets[test_offset : (test_offset + batch_size)]
@@ -128,4 +129,4 @@ for epoch in range(num_epochs):
       print("Test accuracy:%.3f%%" % (np.mean(test_accuracy)*100))
 
 
-  saver.save(session, 'checkpoints/pretrained_lstm.ckpt', global_step=step)
+  saver.save(session, 'checkpoints/pretrained_lstm.ckpt', global_step=summary_step)

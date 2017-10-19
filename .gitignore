@@ -3,3 +3,7 @@ data_process/*.bin
 !data_process/full_spanish_dataset.json
 tensorboard/*/
 data_es/*.npy
+checkpoints/!checkpoints.txt
+checkpoints/*
+.ipynb_checkpoints
+model
