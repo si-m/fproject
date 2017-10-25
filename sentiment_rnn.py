@@ -12,7 +12,7 @@ num_epochs = 15
 tweet_size = 20
 hidden_size = 200
 vec_size = 300
-batch_size = 512
+batch_size = 128
 number_of_layers= 2
 number_of_classes= 3
 learning_rate = 0.001
@@ -39,14 +39,10 @@ def lstm_cell():
 multi_lstm_cells = tf.contrib.rnn.MultiRNNCell([lstm_cell() for _ in range(number_of_layers)], state_is_tuple=True)
 
 # Creates a recurrent neural network
-outputs, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32)
+_, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32)
 
-with tf.name_scope("final_layer"):
-  # weight and bias to shape the final layer
-  W = tf.get_variable("weight_matrix", [hidden_size, number_of_classes], tf.float32, tf.random_normal_initializer(stddev=1.0 / math.sqrt(hidden_size)))
-  b = tf.get_variable("bias", [number_of_classes], initializer=tf.constant_initializer(1.0))
-
-  sentiments = tf.matmul(final_state[-1][-1], W) + b
+sentiments = tf.contrib.layers.fully_connected(final_state[-1][-1], num_outputs=3, activation_fn=None, weights_initializer=tf.random_normal_initializer(),
+  biases_initializer=tf.random_normal_initializer(), scope="fully_connected")
 
 prob = tf.nn.softmax(sentiments)
 tf.summary.histogram('softmax', prob)
@@ -110,9 +106,10 @@ for epoch in range(num_epochs):
       print("Train accuracy:%.3f%%" % (accuracy_train*100))
 
       summary = session.run(merged_summary, feed_dict=data)
-      print("Summary steps:",(summary_step)
-      writer.add_summary(summary,summary_step)
+      print("Summary steps:",(summary_step))
+      writer.add_summary(summary, summary_step)
       summary_step += 50
+
       for batch_num in range(int(len(test_tweets)/batch_size)):
         test_offset = (batch_num * batch_size) % (len(test_tweets) - batch_size)
         test_batch_tweets = test_tweets[test_offset : (test_offset + batch_size)]
@@ -127,6 +124,5 @@ for epoch in range(num_epochs):
 
       print("Test loss:%.3f" % np.mean(test_loss))
       print("Test accuracy:%.3f%%" % (np.mean(test_accuracy)*100))
-
 
   saver.save(session, 'checkpoints/pretrained_lstm.ckpt', global_step=summary_step)
