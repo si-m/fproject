@@ -11,7 +11,7 @@ import random
 MAX_NB_WORDS=20
 
 def name():
-	names = ['Juan','Pedro','Luis','Adrián','Carlos','Cristina','Marta','Sara','María','Lucía','Paula','Laura']
+	names = ['Juan','Pedro','Luis','Adrián','Carlos','Cristina','Marta','Sara','María','Lucía','Paula','Laura','Roberto','Miguel','Sandra','Ana']
 	return random.choice(names)
 
 def words_to_dicc(words, vocab_size):
