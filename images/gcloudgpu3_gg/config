@@ -1,0 +1,11 @@
+num_epochs = 30
+tweet_size = 20
+hidden_size = 300
+vec_size = 300
+batch_size = 256
+number_of_layers= 2
+number_of_classes= 3
+learning_rate = 0.001
+
+with zerostate
+with 0.5 dropout
