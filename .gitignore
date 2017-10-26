@@ -2,6 +2,7 @@ data_process/*.json
 data_process/*.bin
 !data_process/full_spanish_dataset.json
 !data_process/spanish_dataset_nodup.json
+!data_process/spanish_dataset_more_neg.json
 tensorboard/*/
 data_es/*.npy
 checkpoints/!checkpoints.txt
