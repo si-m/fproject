@@ -49,13 +49,17 @@ def main(argv):
 			outputfile = arg
 
 
-	data = load(open(inputfile, 'r'))
-
-	# pre process data all uniques and with accepted klasses
-	for pre_data in data:
-	  if(pre_data['klass'] != 'NONE'):
-	  	tweets.append( tknzr.tokenize(pre_data['text']) )
-	  	labels.append( pre_data['klass'])
+	with open(inputfile, 'r') as fpt:
+		l = fpt.readlines()
+	for row, d in enumerate(l):
+		try:
+			pre_tweet = json.loads(str(d, encoding='utf-8'))
+		except TypeError:
+			pre_tweet = json.loads(d)
+		# pre process data all uniques and with accepted klasses into tweets and labels collections
+		if(pre_tweet['klass'] != 'NONE'):
+			tweets.append( tknzr.tokenize(pre_tweet['text']))
+			labels.append( pre_tweet['klass'])
 	  	
 	# load http://crscardellino.me/SBWCE/ trained model
 	model = gensim.models.KeyedVectors.load_word2vec_format('SBW-vectors-300-min5.bin', binary=True)
@@ -88,6 +92,8 @@ def main(argv):
 	np.save(outputfile + '_vec_tweets.npy',tweets_tensor)
 	np.save(outputfile + '_vec_labels.npy',labels_array)
 
+	print("Tweets file: "+ outputfile + '_vec_tweets.npy')
+	print("Labels file: "+ outputfile + '_vec_labels.npy')
 
 if __name__ == "__main__":
    main(sys.argv[1:])

@@ -42,6 +42,7 @@ def main(argv):
 			if raw['klass'] == "neutral":
 				neutral_set.append({'text': raw['text'], 'klass': raw['klass']})
 
+	print("Sizes: ")
 	# check sizes
 	print("Uniques tweets: ",len(uniq))
 	print("Positive tweets:", len(positive_set))
@@ -52,6 +53,7 @@ def main(argv):
 	# smallest
 	set_size = min(len(positive_set), len(negative_set), len(neutral_set))
 
+	print("Picking minimum dataset size: ", set_size)
 	#resize
 	positive_set = positive_set[:set_size]
 	neutral_set = neutral_set[:set_size]
@@ -61,23 +63,34 @@ def main(argv):
 	export_set = positive_set + negative_set + neutral_set
 
 	#shuffle the dataset
+	print("Shuffle...")
 	random.shuffle(export_set)
+	print("Shuffle...")
 	random.shuffle(export_set)
 
+	print("Spliting datasets into train and test: ")
 	#split in training and testing sets
 	half = len(export_set) >> 1	
 	train_set = export_set[:half]
 	test_set  = export_set[half:]
 
+	print("Train set size: ", len(train_set))
+	print("Test set size: ", len(test_set))
+
 	with open(trainfile, 'w') as outfile:
-			json_data = dumps(train_set)
-			outfile.write(json_data)
-			outfile.close()
+		for tweet in train_set:
+			json.dump(tweet, outfile)
+			outfile.write('\n')
+		outfile.close()
+		print("Exporting to: ", trainfile)
 
 	with open(testfile, 'w') as outfile:
-			json_data = dumps(test_set)
-			outfile.write(json_data)
-			outfile.close()
+		for tweet in test_set:
+			json.dump(tweet, outfile)
+			outfile.write('\n')
+		outfile.close()
+		print("Exporting to: ", testfile)
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
