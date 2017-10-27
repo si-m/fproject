@@ -14,11 +14,11 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv,"hi:",["ifile="])
 	except getopt.GetoptError:
-		print('build_set.py -i <inputfile.json>')
+		print('check.py -i <inputfile.json>')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print('build_set.py -i <inputfile.json>')
+			print('check.py -i <inputfile.json>')
 			sys.exit()
 		elif opt in ("-i", "--ifile"):
 			inputfile = arg
