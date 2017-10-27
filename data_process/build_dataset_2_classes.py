@@ -68,7 +68,7 @@ def main(argv):
 	print("Spliting datasets into train and test: ")
 	#split in training and testing sets
 	# half = len(export_set) >> 1	
-	line = len(export_set) * 0.33
+	line = int(len(export_set) * 0.33)
 	train_set = export_set[line:]
 	test_set  = export_set[:line]
 
