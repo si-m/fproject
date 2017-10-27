@@ -33,7 +33,7 @@ def main(argv):
 			raw = json.loads(str(d, encoding='utf-8'))
 		except TypeError:
 			raw = json.loads(d)
-		if(raw['klass'] != 'NONE' and (raw['id'] not in uniq)):
+		if(raw['klass'] not in ["none","NONE"] and (raw['id'] not in uniq)):
 			uniq.add(raw['id'])
 			if raw['klass'] == "positive":
 				positive_set.append({'text': raw['text'], 'klass': raw['klass']})
@@ -65,7 +65,8 @@ def main(argv):
 	#shuffle the dataset
 	print("Shuffle...")
 	random.shuffle(export_set)
-	print("Shuffle...")
+	random.shuffle(export_set)
+	random.shuffle(export_set)
 	random.shuffle(export_set)
 
 	print("Spliting datasets into train and test: ")
