@@ -1,0 +1,11 @@
+# set variables
+num_epochs = 30
+tweet_size = 20
+hidden_size = 200
+vec_size = 300
+batch_size = 512
+number_of_layers= 1
+number_of_classes= 2
+learning_rate = 0.001
+
+dropout 1,0
