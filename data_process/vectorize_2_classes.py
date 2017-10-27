@@ -57,9 +57,8 @@ def main(argv):
 		except TypeError:
 			pre_tweet = json.loads(d)
 		# pre process data all uniques and with accepted klasses into tweets and labels collections
-		if(pre_tweet['klass'] not in ['none','NONE','negative']):
-			tweets.append( tknzr.tokenize(pre_tweet['text']))
-			labels.append( pre_tweet['klass'])
+		tweets.append( tknzr.tokenize(pre_tweet['text']))
+		labels.append( pre_tweet['klass'])
 	  	
 	# load http://crscardellino.me/SBWCE/ trained model
 	model = gensim.models.KeyedVectors.load_word2vec_format('SBW-vectors-300-min5.bin', binary=True)
