@@ -29,18 +29,23 @@ tweets = tf.placeholder(tf.float32, [None, tweet_size, vec_size], "tweets")
 labels = tf.placeholder(tf.float32, [None, number_of_classes], "labels")
 
 # Placeholder for dropout
-keep_prob = tf.placeholder(tf.float32) 
+keep_prob = tf.placeholder(tf.float32, name="keep_prob") 
 
 # make the lstm cells, and wrap them in MultiRNNCell for multiple layers
 def lstm_cell():
   cell = tf.contrib.rnn.BasicLSTMCell(hidden_size)
   return tf.contrib.rnn.DropoutWrapper(cell=cell, output_keep_prob=keep_prob)
 
+# Multicell initial state
+batch_size_T  = tf.shape(tweets)[0]
+zerostate = multi_lstm_cells.zero_state(batch_size_T, dtype=tf.float32)
+
 multi_lstm_cells = tf.contrib.rnn.MultiRNNCell([lstm_cell() for _ in range(number_of_layers)], state_is_tuple=True)
 
 # Creates a recurrent neural network
 _, final_state = tf.nn.dynamic_rnn(multi_lstm_cells, tweets, dtype=tf.float32)
 
+#Fully connected layer with init
 sentiments = tf.contrib.layers.fully_connected(final_state[-1][-1], num_outputs=3, activation_fn=None, weights_initializer=tf.random_normal_initializer(),
   biases_initializer=tf.random_normal_initializer(), scope="fully_connected")
 
