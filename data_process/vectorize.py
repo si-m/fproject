@@ -5,7 +5,7 @@ import numpy as np
 import json
 from json_tricks.np import dump, dumps, load
 from nltk.tokenize import TweetTokenizer
-import random
+import random, re
 
 # number of words in a tweet
 MAX_NB_WORDS=20
@@ -27,12 +27,14 @@ def label_to_value(label):
 	return table[label]
 
 def main(argv):
+	exclude = '!"#$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
 	inputfile = ''
 	outputfile = ''
 
 	tweets = []
 	labels = []
 	tknzr = TweetTokenizer()
+	regex = re.compile('[%s]' % re.escape(exclude))
 
 	try:
 		opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
@@ -58,7 +60,7 @@ def main(argv):
 			pre_tweet = json.loads(d)
 		# pre process data all uniques and with accepted klasses into tweets and labels collections
 		if(pre_tweet['klass'] != 'NONE'):
-			tweets.append( tknzr.tokenize(pre_tweet['text']))
+			tweets.append( tknzr.tokenize(regex.sub('',pre_tweet['text'])))
 			labels.append( pre_tweet['klass'])
 	  	
 	# load http://crscardellino.me/SBWCE/ trained model
