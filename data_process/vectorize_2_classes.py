@@ -66,16 +66,16 @@ def main(argv):
 		no_url = re.sub(r"https?\S+", "", pre_tweet['text'])
 		#no punctuation
 		no_pun = regex.sub('', no_url)
-		tokenized =tknzr.tokenize(no_pun)
+		tokenized = tknzr.tokenize(no_pun)
 		#remove stop words
 		important_words=[]
 		for word in tokenized:
 			if word not in stop_words:
 				important_words.append(word)
 
-	tweets.append(important_words)
-	labels.append( pre_tweet['klass'])
-
+		tweets.append(important_words)
+		labels.append( pre_tweet['klass'])
+		
 	# load http://crscardellino.me/SBWCE/ trained model
 	model = gensim.models.KeyedVectors.load_word2vec_format('SBW-vectors-300-min5.bin', binary=True)
 
