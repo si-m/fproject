@@ -5,6 +5,7 @@ import numpy as np
 import json
 from json_tricks.np import dump, dumps, load
 from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
 import random, re
 
 # number of words in a tweet
@@ -28,15 +29,16 @@ def label_to_value(label):
 
 def main(argv):
 	exclude = '!"#$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
-  regex = re.compile('[%s]' % re.escape(exclude))
+	regex = re.compile('[%s]' % re.escape(exclude))
 
 	inputfile = ''
 	outputfile = ''
 
-	tweets = []
-	labels = []
+	tweets, labels = [],[]
 	tknzr = TweetTokenizer()
 	regex = re.compile('[%s]' % re.escape(exclude))
+	stop_words = set(stopwords.words('spanish'))
+
 	try:
 		opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
 	except getopt.GetoptError:
