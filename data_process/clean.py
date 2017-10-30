@@ -12,7 +12,7 @@ tweets = []
 tknzr = TweetTokenizer()
 file = 'cleaned.json'
 
-exclude = '!"#$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
+exclude = '!"$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
 regex = re.compile('[%s]' % re.escape(exclude))
 url=re.compile(r'\<http.+?\>', re.DOTALL)
 
@@ -33,7 +33,7 @@ for row, d in enumerate(l):
 	#remove stop words
 	important_words=[]
 	for word in tokenized:
-		if word not in stop_words:
+		if word not in stop_words and word[0] != '#':
 			important_words.append(word)
 
 	tweets.append(important_words)
