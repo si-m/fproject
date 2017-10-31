@@ -69,7 +69,8 @@ def main(argv):
 		#remove stop words
 		important_words=[]
 		for word in tokenized:
-			if word not in stop_words and word[0] != '#':
+			# if word not in stop_words and word[0] != '#':
+			if word.startswith('#')
 				important_words.append(word)
 				
 		tweets.append(important_words)
