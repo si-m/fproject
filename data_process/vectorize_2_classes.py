@@ -29,7 +29,6 @@ def label_to_value(label):
 
 def main(argv):
 	exclude = '!"$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
-	regex = re.compile('[%s]' % re.escape(exclude))
 
 	inputfile = ''
 	outputfile = ''
@@ -72,7 +71,7 @@ def main(argv):
 		for word in tokenized:
 			if word not in stop_words and word[0] != '#':
 				important_words.append(word)
-
+				
 		tweets.append(important_words)
 		labels.append( pre_tweet['klass'])
 		
