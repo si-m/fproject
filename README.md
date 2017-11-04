@@ -76,13 +76,24 @@ jovyan@2261d9443deb:~$ cd work/fpie/tensorboard
 jovyan@2261d9443deb:~$ tensorboard --logdir log/folder
 ```
 
+## Exporting Model
+
+After trainig we need to export the model.
+
+We have to cd into the export folder and change the checkpoint path to our last checkpoint.
+```sh
+$ cd export
+$ python save_model.py
+```
+
+## Serving
+
+The last step is to serve our model.
+
+
 ## Author
 
 * **Santiago IM** - *Initial work* - si.musielack@gmail.com
-
-## Contributions
-
-* **Murphy**
 
 ## Info
 
@@ -92,7 +103,10 @@ jovyan@2261d9443deb:~$ tensorboard --logdir log/folder
 * Gensim Word2vec. - https://radimrehurek.com/gensim/models/word2vec.html
 * Learning rate. - https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/
 * Docker image. -https://github.com/jupyter/docker-stacks/tree/master/tensorflow-notebook
+* Dropout LSTM google research. -https://arxiv.org/pdf/1603.05118.pdf
 
 ## ToDo
 
-- Make the network learn.
+* Add an embedding layer using the gensim word2vec model
+* Increase the dataset to improve the rnn loss and accuracy
+* Start another branch to continue with the 3 classes sentiment analysis.

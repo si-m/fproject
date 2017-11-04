@@ -7,7 +7,7 @@ export_dir = "models-binary/"
 
 sess=tf.Session()    
 #First let's load meta graph and restore weights
-saver = tf.train.import_meta_graph('checkpoints/pretrained_bin_lstm.ckpt-3750.meta')
+saver = tf.train.import_meta_graph('../checkpoints/pretrained_bin_lstm.ckpt-3750.meta')
 saver.restore(sess, tf.train.latest_checkpoint('./checkpoints'))
 
 
