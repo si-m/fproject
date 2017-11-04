@@ -24,7 +24,7 @@ def words_to_dicc(words, vocab_size):
 	return dicc
 
 def label_to_value(label):
-	table = {"P":[1,0], "positive":[1,0], "N":[0,1], "negative":[0,1]}
+	table = {"P":1, "positive":1, "N":0, "negative":0}
 	return table[label]
 
 def main(argv):
