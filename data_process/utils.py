@@ -1,5 +1,4 @@
 from nltk.tokenize import TweetTokenizer
-from nltk.corpus import stopwords
 import gensim
 import numpy as np
 import random, re
@@ -14,10 +13,6 @@ def tweetsToVec(raw_tweets):
 	tknzr = TweetTokenizer()
 	stop_words = set(stopwords.words('spanish'))
 
-	#check if it is a string or a list of strings
-	if not isinstance(raw_tweets, list):
-		raw_tweets = [raw_tweets]
-
 	#Cleaning tweets
 	for tweet in raw_tweets:
 		#remove url
@@ -29,9 +24,10 @@ def tweetsToVec(raw_tweets):
 		#remove stop words
 		important_words=[]
 		for word in tokenized:
-			if word not in stop_words and word[0] != '#':
+			if not word[0] == '#':
 				important_words.append(word)
-				
+
+		# remove words if more than limit
 		tweets.append(important_words)
 
 	# load http://crscardellino.me/SBWCE/ trained model

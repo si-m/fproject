@@ -1,0 +1,12 @@
+num_epochs = 15
+tweet_size = 20
+hidden_size = 500
+vec_size = 300
+batch_size = 512
+number_of_layers= 2
+number_of_classes= 1
+starter_learning_rate = 0.001
+
+dropout exp decay 0.96 at 1000 steps
+
+binary label vectorization

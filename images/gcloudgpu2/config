@@ -1,8 +1,0 @@
-num_epochs = 20
-tweet_size = 20
-hidden_size = 300
-vec_size = 300
-batch_size = 512
-number_of_layers= 3
-number_of_classes= 3
-learning_rate = 0.001

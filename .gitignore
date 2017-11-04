@@ -9,4 +9,3 @@ data_es/*.npy
 checkpoints/!checkpoints.txt
 checkpoints/*
 .ipynb_checkpoints
-model

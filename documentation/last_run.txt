@@ -1,0 +1,482 @@
+Epoch: 0 Step: 0
+Summary step: 0
+Train loss: 0.807195
+Train accuracy:51.758%
+Test loss:6.220
+Test accuracy:49.920%
+Epoch: 0 Step: 50
+Summary step: 50
+Train loss: 0.522706
+Train accuracy:73.828%
+Test loss:0.513
+Test accuracy:74.309%
+Epoch: 0 Step: 100
+Summary step: 100
+Train loss: 0.512772
+Train accuracy:75.977%
+Test loss:0.503
+Test accuracy:74.993%
+Epoch: 0 Step: 150
+Summary step: 150
+Train loss: 0.489683
+Train accuracy:76.367%
+Test loss:0.479
+Test accuracy:76.551%
+Epoch: 0 Step: 200
+Summary step: 200
+Train loss: 0.463705
+Train accuracy:78.711%
+Test loss:0.483
+Test accuracy:76.825%
+Epoch: 1 Step: 0
+Summary step: 250
+Train loss: 0.478216
+Train accuracy:76.367%
+Test loss:0.469
+Test accuracy:77.330%
+Epoch: 1 Step: 50
+Summary step: 300
+Train loss: 0.45518
+Train accuracy:77.344%
+Test loss:0.472
+Test accuracy:76.960%
+Epoch: 1 Step: 100
+Summary step: 350
+Train loss: 0.47525
+Train accuracy:76.562%
+Test loss:0.459
+Test accuracy:77.860%
+Epoch: 1 Step: 150
+Summary step: 400
+Train loss: 0.455233
+Train accuracy:78.320%
+Test loss:0.460
+Test accuracy:77.734%
+Epoch: 1 Step: 200
+Summary step: 450
+Train loss: 0.431075
+Train accuracy:80.469%
+Test loss:0.456
+Test accuracy:78.057%
+Epoch: 2 Step: 0
+Summary step: 500
+Train loss: 0.457995
+Train accuracy:77.930%
+Test loss:0.450
+Test accuracy:78.441%
+Epoch: 2 Step: 50
+Summary step: 550
+Train loss: 0.436913
+Train accuracy:79.297%
+Test loss:0.452
+Test accuracy:78.115%
+Epoch: 2 Step: 100
+Summary step: 600
+Train loss: 0.446893
+Train accuracy:79.102%
+Test loss:0.443
+Test accuracy:78.996%
+Epoch: 2 Step: 150
+Summary step: 650
+Train loss: 0.43939
+Train accuracy:80.859%
+Test loss:0.439
+Test accuracy:79.222%
+Epoch: 2 Step: 200
+Summary step: 700
+Train loss: 0.424739
+Train accuracy:81.641%
+Test loss:0.442
+Test accuracy:79.238%
+Epoch: 3 Step: 0
+Summary step: 750
+Train loss: 0.439417
+Train accuracy:78.711%
+Test loss:0.436
+Test accuracy:79.243%
+Epoch: 3 Step: 50
+Summary step: 800
+Train loss: 0.414558
+Train accuracy:80.273%
+Test loss:0.433
+Test accuracy:79.272%
+Epoch: 3 Step: 100
+Summary step: 850
+Train loss: 0.444674
+Train accuracy:78.711%
+Test loss:0.427
+Test accuracy:79.945%
+Epoch: 3 Step: 150
+Summary step: 900
+Train loss: 0.411111
+Train accuracy:81.641%
+Test loss:0.426
+Test accuracy:79.980%
+Epoch: 3 Step: 200
+Summary step: 950
+Train loss: 0.406522
+Train accuracy:81.445%
+Test loss:0.425
+Test accuracy:80.122%
+Epoch: 4 Step: 0
+Summary step: 1000
+Train loss: 0.436828
+Train accuracy:77.930%
+Test loss:0.433
+Test accuracy:79.329%
+Epoch: 4 Step: 50
+Summary step: 1050
+Train loss: 0.396439
+Train accuracy:81.055%
+Test loss:0.428
+Test accuracy:79.776%
+Epoch: 4 Step: 100
+Summary step: 1100
+Train loss: 0.426941
+Train accuracy:79.297%
+Test loss:0.418
+Test accuracy:80.362%
+Epoch: 4 Step: 150
+Summary step: 1150
+Train loss: 0.416993
+Train accuracy:80.469%
+Test loss:0.422
+Test accuracy:80.267%
+Epoch: 4 Step: 200
+Summary step: 1200
+Train loss: 0.381158
+Train accuracy:81.641%
+Test loss:0.420
+Test accuracy:80.340%
+Epoch: 5 Step: 0
+Summary step: 1250
+Train loss: 0.423756
+Train accuracy:79.297%
+Test loss:0.429
+Test accuracy:79.574%
+Epoch: 5 Step: 50
+Summary step: 1300
+Train loss: 0.392738
+Train accuracy:82.227%
+Test loss:0.419
+Test accuracy:80.123%
+Epoch: 5 Step: 100
+Summary step: 1350
+Train loss: 0.426239
+Train accuracy:80.859%
+Test loss:0.414
+Test accuracy:80.844%
+Epoch: 5 Step: 150
+Summary step: 1400
+Train loss: 0.399454
+Train accuracy:82.812%
+Test loss:0.414
+Test accuracy:80.823%
+Epoch: 5 Step: 200
+Summary step: 1450
+Train loss: 0.363764
+Train accuracy:82.812%
+Test loss:0.414
+Test accuracy:80.666%
+Epoch: 6 Step: 0
+Summary step: 1500
+Train loss: 0.405747
+Train accuracy:80.273%
+Test loss:0.424
+Test accuracy:79.729%
+Epoch: 6 Step: 50
+Summary step: 1550
+Train loss: 0.376179
+Train accuracy:81.445%
+Test loss:0.414
+Test accuracy:80.567%
+Epoch: 6 Step: 100
+Summary step: 1600
+Train loss: 0.412023
+Train accuracy:80.469%
+Test loss:0.413
+Test accuracy:80.899%
+Epoch: 6 Step: 150
+Summary step: 1650
+Train loss: 0.398096
+Train accuracy:81.445%
+Test loss:0.412
+Test accuracy:80.818%
+Epoch: 6 Step: 200
+Summary step: 1700
+Train loss: 0.35775
+Train accuracy:82.031%
+Test loss:0.415
+Test accuracy:80.659%
+Epoch: 7 Step: 0
+Summary step: 1750
+Train loss: 0.389312
+Train accuracy:81.836%
+Test loss:0.416
+Test accuracy:80.424%
+Epoch: 7 Step: 50
+Summary step: 1800
+Train loss: 0.379969
+Train accuracy:81.836%
+Test loss:0.409
+Test accuracy:80.866%
+Epoch: 7 Step: 100
+Summary step: 1850
+Train loss: 0.40769
+Train accuracy:80.469%
+Test loss:0.408
+Test accuracy:81.140%
+Epoch: 7 Step: 150
+Summary step: 1900
+Train loss: 0.384207
+Train accuracy:83.008%
+Test loss:0.407
+Test accuracy:81.193%
+Epoch: 7 Step: 200
+Summary step: 1950
+Train loss: 0.357364
+Train accuracy:82.422%
+Test loss:0.416
+Test accuracy:80.564%
+Epoch: 8 Step: 0
+Summary step: 2000
+Train loss: 0.380673
+Train accuracy:82.031%
+Test loss:0.419
+Test accuracy:80.117%
+Epoch: 8 Step: 50
+Summary step: 2050
+Train loss: 0.357408
+Train accuracy:84.375%
+Test loss:0.410
+Test accuracy:81.173%
+Epoch: 8 Step: 100
+Summary step: 2100
+Train loss: 0.409332
+Train accuracy:81.055%
+Test loss:0.408
+Test accuracy:81.185%
+Epoch: 8 Step: 150
+Summary step: 2150
+Train loss: 0.371087
+Train accuracy:82.227%
+Test loss:0.407
+Test accuracy:81.143%
+Epoch: 8 Step: 200
+Summary step: 2200
+Train loss: 0.347152
+Train accuracy:83.789%
+Test loss:0.407
+Test accuracy:81.238%
+Epoch: 9 Step: 0
+Summary step: 2250
+Train loss: 0.388495
+Train accuracy:82.227%
+Test loss:0.414
+Test accuracy:80.499%
+Epoch: 9 Step: 50
+Summary step: 2300
+Train loss: 0.374596
+Train accuracy:82.422%
+Test loss:0.405
+Test accuracy:81.410%
+Epoch: 9 Step: 100
+Summary step: 2350
+Train loss: 0.393601
+Train accuracy:83.008%
+Test loss:0.408
+Test accuracy:81.111%
+Epoch: 9 Step: 150
+Summary step: 2400
+Train loss: 0.366157
+Train accuracy:82.812%
+Test loss:0.403
+Test accuracy:81.402%
+Epoch: 9 Step: 200
+Summary step: 2450
+Train loss: 0.346118
+Train accuracy:83.203%
+Test loss:0.405
+Test accuracy:81.557%
+Epoch: 10 Step: 0
+Summary step: 2500
+Train loss: 0.389841
+Train accuracy:81.836%
+Test loss:0.418
+Test accuracy:80.502%
+Epoch: 10 Step: 50
+Summary step: 2550
+Train loss: 0.344663
+Train accuracy:84.180%
+Test loss:0.406
+Test accuracy:81.479%
+Epoch: 10 Step: 100
+Summary step: 2600
+Train loss: 0.384528
+Train accuracy:84.570%
+Test loss:0.406
+Test accuracy:81.360%
+Epoch: 10 Step: 150
+Summary step: 2650
+Train loss: 0.358474
+Train accuracy:84.570%
+Test loss:0.406
+Test accuracy:81.447%
+Epoch: 10 Step: 200
+Summary step: 2700
+Train loss: 0.343
+Train accuracy:83.594%
+Test loss:0.416
+Test accuracy:81.026%
+Epoch: 11 Step: 0
+Summary step: 2750
+Train loss: 0.34983
+Train accuracy:83.398%
+Test loss:0.418
+Test accuracy:80.941%
+Epoch: 11 Step: 50
+Summary step: 2800
+Train loss: 0.343618
+Train accuracy:83.789%
+Test loss:0.407
+Test accuracy:81.400%
+Epoch: 11 Step: 100
+Summary step: 2850
+Train loss: 0.379506
+Train accuracy:82.031%
+Test loss:0.410
+Test accuracy:80.995%
+Epoch: 11 Step: 150
+Summary step: 2900
+Train loss: 0.347551
+Train accuracy:85.352%
+Test loss:0.404
+Test accuracy:81.539%
+Epoch: 11 Step: 200
+Summary step: 2950
+Train loss: 0.321128
+Train accuracy:85.547%
+Test loss:0.411
+Test accuracy:81.377%
+Epoch: 12 Step: 0
+Summary step: 3000
+Train loss: 0.339974
+Train accuracy:83.789%
+Test loss:0.422
+Test accuracy:80.597%
+Epoch: 12 Step: 50
+Summary step: 3050
+Train loss: 0.34132
+Train accuracy:85.156%
+Test loss:0.410
+Test accuracy:81.415%
+Epoch: 12 Step: 100
+Summary step: 3100
+Train loss: 0.35585
+Train accuracy:83.594%
+Test loss:0.414
+Test accuracy:80.956%
+Epoch: 12 Step: 150
+Summary step: 3150
+Train loss: 0.3482
+Train accuracy:84.766%
+Test loss:0.406
+Test accuracy:81.647%
+Epoch: 12 Step: 200
+Summary step: 3200
+Train loss: 0.320853
+Train accuracy:86.914%
+Test loss:0.421
+Test accuracy:80.983%
+Epoch: 13 Step: 0
+Summary step: 3250
+Train loss: 0.340294
+Train accuracy:84.180%
+Test loss:0.424
+Test accuracy:80.763%
+Epoch: 13 Step: 50
+Summary step: 3300
+Train loss: 0.334032
+Train accuracy:83.594%
+Test loss:0.421
+Test accuracy:81.489%
+Epoch: 13 Step: 100
+Summary step: 3350
+Train loss: 0.331287
+Train accuracy:85.547%
+Test loss:0.414
+Test accuracy:81.125%
+Epoch: 13 Step: 150
+Summary step: 3400
+Train loss: 0.350763
+Train accuracy:83.789%
+Test loss:0.409
+Test accuracy:81.647%
+Epoch: 13 Step: 200
+Summary step: 3450
+Train loss: 0.31427
+Train accuracy:86.719%
+Test loss:0.426
+Test accuracy:80.644%
+Epoch: 14 Step: 0
+Summary step: 3500
+Train loss: 0.30548
+Train accuracy:86.719%
+Test loss:0.438
+Test accuracy:81.248%
+Epoch: 14 Step: 50
+Summary step: 3550
+Train loss: 0.314402
+Train accuracy:86.328%
+Test loss:0.422
+Test accuracy:81.474%
+Epoch: 14 Step: 100
+Summary step: 3600
+Train loss: 0.327816
+Train accuracy:85.742%
+Test loss:0.416
+Test accuracy:80.859%
+Epoch: 14 Step: 150
+Summary step: 3650
+Train loss: 0.331134
+Train accuracy:85.547%
+Test loss:0.418
+Test accuracy:81.432%
+Epoch: 14 Step: 200
+Summary step: 3700
+Train loss: 0.299334
+Train accuracy:86.914%
+Test loss:0.420
+Test accuracy:81.126%
+Epoch: 15 Step: 0
+Summary step: 3750
+Train loss: 0.305625
+Train accuracy:87.109%
+Test loss:0.478
+Test accuracy:80.642%
+Epoch: 15 Step: 50
+Summary step: 3800
+Train loss: 0.322715
+Train accuracy:85.547%
+Test loss:0.441
+Test accuracy:81.150%
+Epoch: 15 Step: 100
+Summary step: 3850
+Train loss: 0.311319
+Train accuracy:86.914%
+Test loss:0.428
+Test accuracy:80.349%
+Epoch: 15 Step: 150
+Summary step: 3900
+Train loss: 0.302188
+Train accuracy:86.719%
+Test loss:0.423
+Test accuracy:81.232%
+Epoch: 15 Step: 200
+Summary step: 3950
+Train loss: 0.281517
+Train accuracy:88.086%
+Test loss:0.431
+Test accuracy:81.313%
+Out[1]:
+'checkpoints/pretrained_lstm.ckpt-4000'
