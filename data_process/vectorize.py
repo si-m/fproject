@@ -61,7 +61,7 @@ def main(argv):
 		except TypeError:
 			pre_tweet = json.loads(d)
 	  	
-	  lower_text = pre_tweet['text'].lower()
+		lower_text = pre_tweet['text'].lower()
 
 		#cleaning
 		no_url = re.sub(r"\S*(\.com|\.ly|\.co|\.net|\.org|\.me|\.gl)\S*", "", lower_text)
