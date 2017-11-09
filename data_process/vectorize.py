@@ -28,7 +28,7 @@ def label_to_value(label):
 	return table[label]
 
 def main(argv):
-	exclude = '!"$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
+	exclude = '1234567890!¡"$%&\'()*+,-./:;<=>?¿[\\]^_`{|}~'
 
 	inputfile = ''
 	outputfile = ''
@@ -61,10 +61,15 @@ def main(argv):
 		except TypeError:
 			pre_tweet = json.loads(d)
 	  	
-		#remove url
-		no_url = re.sub(r"https?\S+", "", pre_tweet['text'])
-		#no punctuation
-		no_pun = regex.sub('', no_url)
+	  lower_text = pre_tweet['text'].lower()
+
+		#cleaning
+		no_url = re.sub(r"\S*(\.com|\.ly|\.co|\.net|\.org|\.me|\.gl)\S*", "", lower_text)
+		jaja = re.sub(r'\w*(jaja|kaka|jeje|jiji|juju|jojo|ajaj|jaaj)\w*','jaja',no_url)
+		repeat = re.sub(r'([a-z])\1{2,}',r'\1', jaja)
+		no_pun = regex.sub('', repeat)
+
+		#tokenizing
 		tokenized = tknzr.tokenize(no_pun)
 		#remove stop words
 		important_words=[]
