@@ -1,4 +1,4 @@
-# Final Project Informatic Engineering
+# Final Project (Informatics Engineering)
 
 This is an implementation of a Recurrent Neural Network for sentiment analysis.
 
