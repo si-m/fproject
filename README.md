@@ -3,6 +3,7 @@
 This is an implementation of a Recurrent Neural Network for sentiment analysis.
 
 [Final Project Document (Spanish only)](https://github.com/s-im/fproject/fproject_spanish_version.pdf)
+
 [Final Project Slides (Spanish only)](https://github.com/s-im/fproject/fproject_presentation.pptx)
 
 
